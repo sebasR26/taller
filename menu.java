@@ -12,16 +12,18 @@ public class menu {
         objmatriz[][] almacen1=new objmatriz[n][n];
         objmatriz[][] almacen2=new objmatriz[n][n];
         objmatriz[][] almacenUnificado=new objmatriz[n][n];
+        int almacen;
         while (continuar) {
             System.out.println("\nBienvenido, que quiere?\n");
             System.out.println("1- llenar almacen 1");
             System.out.println("2- mostrar almacen 1");
             System.out.println("3- llenar almacen 2");
             System.out.println("4- mostrar almacen 2");
-            System.out.println("5- buscar producto ");
-            System.out.println("6- unificar almacenes");
-            System.out.println("7- mostarar unificados");
-            System.out.println("8- salir \n");
+            System.out.println("5- inventario de almacen ");
+            System.out.println("6- buscar producto ");
+            System.out.println("7- unificar almacenes");
+            System.out.println("8- mostarar unificados");
+            System.out.println("9- salir \n");
 
             int opt = sc.nextInt();
             switch (opt) {
@@ -40,11 +42,34 @@ public class menu {
                     m.MostrarAlmacen(almacen2);
                     break;
                 case 5:
+                    System.out.println("en que almacen desea ver el inventario?");
+                   System.out.println("1- almacen 1");
+                   System.out.println("2- almacen 2");
+                   System.out.println("3- salir");
+                    almacen = sc.nextInt();
+                   
+                   switch (almacen) {
+                    
+                    case 1:
+                        m.inventario(almacen1);
+                        break;
+                    case 2:
+                        m.inventario(almacen2);
+                        break;
+                    case 3:
+                        break;
+                    default:
+                        System.out.println("fastidioso");
+                        break;
+                   }
+                    break;
+                    
+                case 6:
                    System.out.println("en que almacen desea buscar?");
                    System.out.println("1- almacen 1");
                    System.out.println("2- almacen 2");
                    System.out.println("3- salir");
-                   int almacen = sc.nextInt();
+                    almacen = sc.nextInt();
                    
                    switch (almacen) {
                     
@@ -67,13 +92,14 @@ public class menu {
                         break;
                    }
                     break;
-                case 6:
-                    System.out.println("mantenimiento");
-                    break;
                 case 7:
                     System.out.println("mantenimiento");
                     break;
                 case 8:
+                    System.out.println("bye");
+                    continuar = false;
+                    break;
+                case 9:
                     System.out.println("bye");
                     continuar = false;
                     break;

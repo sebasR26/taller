@@ -36,6 +36,7 @@ public class metodos {
 
     }
 
+    //ejercicio 1
     public void BuscarProducto(objmatriz[][] a, String name){
         for(int i=0; i<a.length; i++){
             for(int j=0; j<a[0].length; j++){
@@ -46,5 +47,18 @@ public class metodos {
                 }
             }
         }
+    }
+
+    //ejercicio 2
+    public void inventario(objmatriz[][] a){
+        int total = 0;
+        for(int i=0; i<a.length; i++){
+            for(int j=0; j<a[0].length; j++){
+                
+                total = total + a[i][j].getCantidad();
+                
+            }
+        }
+        System.out.println("Inventario total del almacen:" + total);
     }
 }

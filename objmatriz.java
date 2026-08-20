@@ -1,6 +1,6 @@
 public class objmatriz {
     String name;
-    double precio;
+    Double precio;
     int cantidad;
     
     public objmatriz(String name, double precio, int cantidad) {

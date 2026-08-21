@@ -15,7 +15,8 @@ public class menu {
         System.out.println("que menu deseas ver?\n");
         System.out.println("1- menu de almacen");
         System.out.println("2- menu de libreria");
-        System.out.println("3- salir");
+        System.out.println("3- menu de teatro");
+        System.out.println("4- salir");
 
         n = sc.nextInt();
         switch (n) {
@@ -159,7 +160,40 @@ public class menu {
                     
                 
                     }
-            case 3:
+            case 3: //ejercicios #4
+                objasiento[][] asientos = new objasiento[1][2];
+                    while (continuar) {
+                    
+                    
+                    System.out.println("\nque quiere: ");
+                   System.out.println("1- asignar precios: ");
+                   System.out.println("2- mostrar asientos: ");
+                   System.out.println("3- salir: ");
+                   
+                    n = sc.nextInt();
+                   
+                   switch (n) {
+                    
+                    case 1:
+                        m.asignarPrecio(asientos, sc);
+                        break;
+                    case 2:
+                        m.ordenar(asientos);
+                        break;
+                    case 3:
+                        System.out.println("bye");
+                        continuar = false;
+                        break;
+
+                   
+                    default:
+                        System.out.println("fastidioso");
+                        break;
+                   }
+
+                    }
+            case 4:
+                System.out.println("bye");
                 continuar = false;
                 break;
             default:

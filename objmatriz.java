@@ -2,7 +2,7 @@ public class objmatriz {
     String name;
     Double precio;
     int cantidad;
-    
+
     public objmatriz(String name, double precio, int cantidad) {
         this.name = name;
         this.precio = precio;

@@ -19,7 +19,7 @@ public class menu {
 
         n = sc.nextInt();
         switch (n) {
-            case 1:
+            case 1: //ejercicios #1 #2 
                 System.out.println("dimension almacen");
                 n = sc.nextInt();
                 objmatriz[][] almacen1=new objmatriz[n][n];
@@ -122,7 +122,7 @@ public class menu {
             
         }
                 break;
-            case 2:
+            case 2: //ejercicios #3
                 System.out.println("dimension libreria");
                     n = sc.nextInt();
                     objLibreria[][] libreria = new objLibreria[n][n];

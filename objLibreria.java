@@ -1,4 +1,5 @@
 public class objLibreria {
+    //ejercicios #3
     String name;
     String autor;
     double precio;

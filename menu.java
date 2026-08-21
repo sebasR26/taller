@@ -7,13 +7,26 @@ public class menu {
         boolean continuar = true;
         String name;
         metodos m = new metodos();
-        System.out.println("dimension almacen");
-        int n = sc.nextInt();
-        objmatriz[][] almacen1=new objmatriz[n][n];
-        objmatriz[][] almacen2=new objmatriz[n][n];
-        objmatriz[][] almacenUnificado=new objmatriz[n][n];
-        int almacen;
-        while (continuar) {
+        metodLibre ml = new metodLibre();
+        int n;
+        
+
+        while(continuar){
+        System.out.println("que menu deseas ver?\n");
+        System.out.println("1- menu de almacen");
+        System.out.println("2- menu de libreria");
+        System.out.println("3- menu de teatro");
+        System.out.println("4- salir");
+
+        n = sc.nextInt();
+        switch (n) {
+            case 1: //ejercicios #1 #2 
+                System.out.println("dimension almacen");
+                n = sc.nextInt();
+                objmatriz[][] almacen1=new objmatriz[n][n];
+                objmatriz[][] almacen2=new objmatriz[n][n];
+                objmatriz[][] almacenUnificado=new objmatriz[n][n];
+                while (continuar) {
             System.out.println("\nBienvenido, que quiere?\n");
             System.out.println("1- llenar almacen 1");
             System.out.println("2- mostrar almacen 1");
@@ -25,8 +38,8 @@ public class menu {
             System.out.println("8- mostarar unificados");
             System.out.println("9- salir \n");
 
-            int opt = sc.nextInt();
-            switch (opt) {
+            n = sc.nextInt();
+            switch (n) {
                 case 1:
                     m.LenarAlmacen(almacen1, sc);
                     break;
@@ -46,9 +59,9 @@ public class menu {
                    System.out.println("1- almacen 1");
                    System.out.println("2- almacen 2");
                    System.out.println("3- salir");
-                    almacen = sc.nextInt();
+                    n = sc.nextInt();
                    
-                   switch (almacen) {
+                   switch (n) {
                     
                     case 1:
                         m.inventario(almacen1);
@@ -69,9 +82,9 @@ public class menu {
                    System.out.println("1- almacen 1");
                    System.out.println("2- almacen 2");
                    System.out.println("3- salir");
-                    almacen = sc.nextInt();
+                    n = sc.nextInt();
                    
-                   switch (almacen) {
+                   switch (n) {
                     
                     case 1:
                         System.out.println("ingrese nombre del producto a buscar");
@@ -96,8 +109,7 @@ public class menu {
                     System.out.println("mantenimiento");
                     break;
                 case 8:
-                    System.out.println("bye");
-                    continuar = false;
+                    System.out.println("mantenimiento");
                     break;
                 case 9:
                     System.out.println("bye");
@@ -110,7 +122,93 @@ public class menu {
             }
             
         }
+                break;
+            case 2: //ejercicios #3
+                System.out.println("dimension libreria");
+                    n = sc.nextInt();
+                    objLibreria[][] libreria = new objLibreria[n][n];
+                    while (continuar) {
+                    
+                    System.out.println("\nque quiere: ");
+                   System.out.println("1- llenar libreria");
+                   System.out.println("2- mostrar libreria");
+                   System.out.println("3- precio mas alto");
+                   System.out.println("4- salir");
+                    n = sc.nextInt();
+                   
+                   switch (n) {
+                    
+                    case 1:
+                        ml.llenarLibreria(libreria, sc);
+                        break;
+                    case 2:
+                        ml.mostrarLibreria(libreria);
+                        break;
+                    case 3:
+                        ml.precioAto(libreria);
+                        break;
+                    case 4:
+                        System.out.println("bye");
+                        continuar = false;
+                        break;
+
+                   
+                    default:
+                        System.out.println("fastidioso");
+                        break;
+                   }
+                    
+                
+                    }
+            case 3: //ejercicios #4
+                objasiento[][] asientos = new objasiento[1][2];
+                    while (continuar) {
+                    
+                    
+                    System.out.println("\nque quiere: ");
+                   System.out.println("1- asignar precios: ");
+                   System.out.println("2- mostrar asientos: ");
+                   System.out.println("3- salir: ");
+                   
+                    n = sc.nextInt();
+                   
+                   switch (n) {
+                    
+                    case 1:
+                        m.asignarPrecio(asientos, sc);
+                        break;
+                    case 2:
+                        m.ordenar(asientos);
+                        break;
+                    case 3:
+                        System.out.println("bye");
+                        continuar = false;
+                        break;
+
+                   
+                    default:
+                        System.out.println("fastidioso");
+                        break;
+                   }
+
+                    }
+            case 4:
+                System.out.println("bye");
+                continuar = false;
+                break;
+            default:
+                System.out.println("fastidioso");
+                break;
+
+        }
+    }
+
+            
+        
 
     } 
+
+
+    
 }
 

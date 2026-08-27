@@ -104,38 +104,37 @@ public class metodos {
         }
     }
 
-    public objmatriz[][] unificar(objmatriz[][] a,objmatriz[][] b, objmatriz[][] c ){
-        for(int i=0; i<a.length; i++){
-            for(int j=0; j<a[0].length; j++){
-                for(int i1=0; i1<a.length; i1++){
-                    for(int j1=0; j1<a.length; j1++){
-                        if(a[i][j].getName().equalsIgnoreCase(b[i1][j1].getName())){
+    public objmatriz[][] Unificar(objmatriz[][] a, objmatriz[][] b, objmatriz[][] c) {
+        // unificar matrices
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                for (int i1 = 0; i1 < b.length; i1++) {
+                    for (int j1 = 0; j1 < b[0].length; j1++) {
+                        if (a[i][j].getName().equalsIgnoreCase(b[i1][j1].getName())) {
                             a[i][j].setCantidad(a[i][j].getCantidad() + b[i1][j1].getCantidad());
-                            b[i][j].setName(null);
+                            b[i1][j1].setName(null);
                         }
                     }
                 }
             }
         }
+        // pasar los datos de la matriz a a la c
+        int auxf = a.length, auxc = a.length;
 
-        //pasar los datos de la Ma a la Mc
-        int auxF=0, auxC=0;
-        for(int i=0; i<a.length; i++){
-            for(int j=0; j<a.length; j++){
-                c[i][j] = a[i][j]; 
-                auxC=j;       
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < c.length; j++) {
+                c[i][j] = a[i][j];
+
             }
-            auxF=i;
+
         }
-        for(int i=0; i<a.length; i++){
-            for(int j=0; j<a.length; j++){
-                if(b[i][j].getName() != null){
-                    c[auxF][auxC] = b[i][j];
-                    auxC++;
-                }
-                auxF++;
+        for (int i = 0; i < c.length; i++) {
+            for (int j = 0; j < c.length; j++) {
+                if (b[i][j].getName() != null)
+                    c[auxf][auxc] = b[i][j];
+                auxc++;
             }
-
+            auxf++;
         }
         return c;
     }

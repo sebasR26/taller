@@ -106,7 +106,7 @@ public class menu {
                    }
                     break;
                 case 7:
-                    m.unificar(almacen1, almacen2, almacenUnificado);
+                    m.Unificar(almacen1, almacen2, almacenUnificado);
                     break;
                 case 8:
                     System.out.println("mantenimiento");

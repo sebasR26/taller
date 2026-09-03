@@ -24,8 +24,8 @@ public class menu {
                 System.out.println("dimension almacen");
                 n = sc.nextInt();
                 objmatriz[][] almacen1=new objmatriz[n][n];
-                objmatriz[][] almacen2=new objmatriz[n][n*n];
-                objmatriz[][] almacenUnificado=new objmatriz[n][n];
+                objmatriz[][] almacen2=new objmatriz[n][n];
+                objmatriz[][] almacenUnificado=new objmatriz[n][n+n*n];
                 while (continuar) {
             System.out.println("\nBienvenido, que quiere?\n");
             System.out.println("1- llenar almacen 1");
@@ -109,7 +109,7 @@ public class menu {
                     m.Unificar(almacen1, almacen2, almacenUnificado);
                     break;
                 case 8:
-                    System.out.println("mantenimiento");
+                    m.MostrarUnificado(almacenUnificado);
                     break;
                 case 9:
                     System.out.println("bye");

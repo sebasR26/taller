@@ -119,24 +119,43 @@ public class metodos {
             }
         }
         // pasar los datos de la matriz a a la c
-        int auxf = a.length, auxc = a.length;
+        int auxc = a.length;
 
-        for (int i = 0; i < c.length; i++) {
-            for (int j = 0; j < c.length; j++) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
                 c[i][j] = a[i][j];
 
             }
 
         }
-        for (int i = 0; i < c.length; i++) {
-            for (int j = 0; j < c.length; j++) {
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[0].length; j++) {
                 if (b[i][j].getName() != null)
-                    c[auxf][auxc] = b[i][j];
+                    c[i][auxc] = b[i][j];
                 auxc++;
             }
-            auxf++;
+            auxc = a.length;
+
         }
         return c;
     }
+
+     public void MostrarUnificado(objmatriz[][] matrix) {
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] != null) {
+                    System.out.println("Nombre Producto: " + matrix[i][j].getName());
+                    System.out.println("Precio Producto: " + matrix[i][j].getPrecio());
+                    System.out.println("Stock Producto: " + matrix[i][j].getCantidad());
+                    System.out.println("----------------------------------------------------");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+    
         }
          

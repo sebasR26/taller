@@ -103,4 +103,59 @@ public class metodos {
             }
         }
     }
-}
+
+    public objmatriz[][] Unificar(objmatriz[][] a, objmatriz[][] b, objmatriz[][] c) {
+        // unificar matrices
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                for (int i1 = 0; i1 < b.length; i1++) {
+                    for (int j1 = 0; j1 < b[0].length; j1++) {
+                        if (a[i][j].getName().equalsIgnoreCase(b[i1][j1].getName())) {
+                            a[i][j].setCantidad(a[i][j].getCantidad() + b[i1][j1].getCantidad());
+                            b[i1][j1].setName(null);
+                        }
+                    }
+                }
+            }
+        }
+        // pasar los datos de la matriz a a la c
+        int auxc = a.length;
+
+        for (int i = 0; i < a.length; i++) {
+            for (int j = 0; j < a[0].length; j++) {
+                c[i][j] = a[i][j];
+
+            }
+
+        }
+        for (int i = 0; i < b.length; i++) {
+            for (int j = 0; j < b[0].length; j++) {
+                if (b[i][j].getName() != null)
+                    c[i][auxc] = b[i][j];
+                auxc++;
+            }
+            auxc = a.length;
+
+        }
+        return c;
+    }
+
+     public void MostrarUnificado(objmatriz[][] matrix) {
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                if (matrix[i][j] != null) {
+                    System.out.println("Nombre Producto: " + matrix[i][j].getName());
+                    System.out.println("Precio Producto: " + matrix[i][j].getPrecio());
+                    System.out.println("Stock Producto: " + matrix[i][j].getCantidad());
+                    System.out.println("----------------------------------------------------");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+    
+        }
+         
